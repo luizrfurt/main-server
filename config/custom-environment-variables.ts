@@ -1,0 +1,26 @@
+export default {
+  port: "PORT",
+  postgresConfig: {
+    host: "POSTGRES_HOST",
+    port: "POSTGRES_PORT",
+    username: "POSTGRES_USER",
+    password: "POSTGRES_PASSWORD",
+    database: "POSTGRES_DB",
+    schema: "POSTGRES_SCHEMA",
+  },
+  accessTokenPrivateKey: "JWT_ACCESS_TOKEN_PRIVATE_KEY",
+  accessTokenPublicKey: "JWT_ACCESS_TOKEN_PUBLIC_KEY",
+  refreshTokenPrivateKey: "JWT_REFRESH_TOKEN_PRIVATE_KEY",
+  refreshTokenPublicKey: "JWT_REFRESH_TOKEN_PUBLIC_KEY",
+  smtp: {
+    host: "EMAIL_HOST",
+    pass: "EMAIL_PASS",
+    port: "EMAIL_PORT",
+    user: "EMAIL_USER",
+  },
+  emailFrom: "EMAIL_FROM",
+  awsS3AccessKeyId: "AWS_S3_ACCESS_KEY_ID",
+  awsS3SecretAccessKey: "AWS_S3_SECRET_ACCESS_KEY",
+  awsS3BucketName: "AWS_S3_BUCKET_NAME",
+  awsS3Region: "AWS_S3_REGION",
+};
