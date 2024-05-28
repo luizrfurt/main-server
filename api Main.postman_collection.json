@@ -1,0 +1,1064 @@
+{
+	"info": {
+		"_postman_id": "26ea1332-f8d2-49b0-b753-b29985ecd17b",
+		"name": "api Main",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5766664"
+	},
+	"item": [
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "Get applications",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/applications",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Murphy Cooper\",\r\n    \"email\": \"murphycooper@interstellar.com\",\r\n    \"login\": \"murphycooper\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/auth/register",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"murphycooper\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/auth/login",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/auth/refresh",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/auth/logout",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/auth/user",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contexts",
+			"item": [
+				{
+					"name": "Get contexts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/contexts",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"contexts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enable application in context",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/contexts/{{contextId}}/{{applicationId}}",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"contexts",
+								"{{contextId}}",
+								"{{applicationId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable application in context",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/contexts/{{contextId}}/{{applicationId}}",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"contexts",
+								"{{contextId}}",
+								"{{applicationId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Email",
+			"item": [
+				{
+					"name": "Send email (confirm)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/email/confirm/send",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"email",
+								"confirm",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify token (confirm)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/email/confirm/verify/{{emailToken}}",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"email",
+								"confirm",
+								"verify",
+								"{{emailToken}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Password",
+			"item": [
+				{
+					"name": "Send email (reset)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"murphycooper@interstellar.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/password/reset/send",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"password",
+								"reset",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify token (reset)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/password/reset/verify/{{passowrdToken}}",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"password",
+								"reset",
+								"verify",
+								"{{passowrdToken}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"12345667\",\r\n    \"passwordConfirm\": \"12345667\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/password/reset/change/{{passwordToken}}",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"password",
+								"reset",
+								"change",
+								"{{passwordToken}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session",
+			"item": [
+				{
+					"name": "Validate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/sessions/validate",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"sessions",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accessToken\": \"accessToken\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/sessions/validate",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"sessions",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/users/{{userId}}",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"users",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/users",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tom Cooper\",\r\n    \"email\": \"tomcooper@interstellar.com\",\r\n    \"login\": \"tomcooper\",\r\n    \"cpf\": \"021.656.110-83\",\r\n    \"phone\": \"(46) 98888-0000\",\r\n    \"password\": \"12345678\",\r\n    \"leader\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/users",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tom B. Cooper\",\r\n    \"email\": \"tombcooper@interstellar.com\",\r\n    \"login\": \"tombcooper\",\r\n    \"cpf\": \"021.656.110-83\",\r\n    \"phone\": \"(46) 97777-0000\",\r\n    // photo\r\n     // \"photo\": \"data:image/{format};base64,...\", // para atualizar\r\n     // \"photo\": null, // para remover\r\n     // não passar \"photo\" para mantar foto atual\r\n    // password\r\n     // \"passwordOld\": \"12345678\", // para atualizar\r\n     // \"passwordNew\": \"87654321\", // para atualizar\r\n     // não passar \"password\" para manter senha atual\r\n    \"leader\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/users/{{userId}}",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"users",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inactive user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/users/{{userId}}",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"users",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
