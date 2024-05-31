@@ -6,6 +6,7 @@ import passwordRouter from "./routes/password.route";
 import sessionRouter from "./routes/session.route";
 import applicationRouter from "./routes/application.route";
 import contextRouter from "./routes/context.route";
+import termConditionRouter from "./routes/termCondition.route";
 
 const router = Router();
 
@@ -20,6 +21,7 @@ router.use("/api/main/password", passwordRouter);
 router.use("/api/main/sessions", sessionRouter);
 router.use("/api/main/applications", applicationRouter);
 router.use("/api/main/contexts", contextRouter);
+router.use("/api/main/terms-conditions", termConditionRouter);
 
 /**
  * No auth: Only operations without authentication

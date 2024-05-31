@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "26ea1332-f8d2-49b0-b753-b29985ecd17b",
+		"_postman_id": "ce5f090c-5de9-4487-bd5a-a1f05dc81989",
 		"name": "api Main",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "5766664"
+		"_exporter_id": "27332845"
 	},
 	"item": [
 		{
@@ -784,6 +784,60 @@
 								"main",
 								"sessions",
 								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TermsConditions",
+			"item": [
+				{
+					"name": "Get termsConditions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-mobile-app",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{accessToken}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrlMain}}/api/main/terms-conditions",
+							"host": [
+								"{{baseUrlMain}}"
+							],
+							"path": [
+								"api",
+								"main",
+								"terms-conditions"
 							]
 						}
 					},
