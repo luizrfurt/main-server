@@ -21,17 +21,15 @@ import {
 import { sendMailEmailConfirm } from "../services/mailer.service";
 import { initContextService } from "../services/context.service";
 
-const cookiesOptions: CookieOptions = {
-  httpOnly: true,
-  sameSite: "none",
-  secure: true,
-  path: "/",
-};
-
 /**
  * Cookies
  */
-if (process.env.NODE_ENV === "production") cookiesOptions.secure = true;
+const cookiesOptions: CookieOptions = {
+  httpOnly: true,
+  sameSite: "lax",
+  secure: process.env.NODE_ENV === "production",
+  path: "/",
+};
 
 const accessTokenCookieOptions: CookieOptions = {
   ...cookiesOptions,
