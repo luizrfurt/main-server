@@ -35,7 +35,7 @@ export const validateSessionMainController = async (
     // Check if the user has a valid session
     const session = await getSessionService({
       user: decoded.sub,
-      accessToken,
+      access_token: accessToken,
       active: true,
     });
     if (!session) {
@@ -87,7 +87,7 @@ export const validateSessionSubController = async (
     // Check if the user has a valid session
     const session = await getSessionService({
       user: decoded.sub,
-      accessToken,
+      access_token: accessToken,
       active: true,
     });
     if (!session) {
