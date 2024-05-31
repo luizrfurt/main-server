@@ -5,16 +5,16 @@ import { User } from "./user.entity";
 @Entity("sessions")
 export class Session extends Model {
   @Column()
-  accessToken: string;
+  access_token: string;
 
   @Column({ type: "timestamp" })
-  accessTokenExpiresIn: string;
+  access_token_expires_in: string;
 
   @Column()
-  refreshToken: string;
+  refresh_token: string;
 
   @Column({ type: "timestamp" })
-  refreshTokenExpiresIn: string;
+  refresh_token_expires_in: string;
 
   // Referência para entidade users
   @ManyToOne(() => User, (user: User) => user.sessions, { eager: true })

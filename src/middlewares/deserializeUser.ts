@@ -47,7 +47,7 @@ export const deserializeUser = async (
     // Check if the user has a valid session
     const session = await getSessionsService({
       user: decoded.sub,
-      accessToken,
+      access_token: accessToken,
       active: true,
     });
 

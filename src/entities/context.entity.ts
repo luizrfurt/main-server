@@ -20,7 +20,7 @@ export class Context extends Model {
     () => ContextApplication,
     (contextApplication: ContextApplication) => contextApplication.context
   )
-  contextApplications: ContextApplication[];
+  contexts_applications: ContextApplication[];
 
   toJSON() {
     return {

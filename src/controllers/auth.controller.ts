@@ -70,7 +70,7 @@ export const registerUserController = async (
     });
 
     // Atribui o ID de si mesmo como sendo o createBy
-    newUser.createdBy = newUser.id;
+    newUser.created_by = newUser.id;
     await newUser.save();
 
     /**
@@ -78,9 +78,10 @@ export const registerUserController = async (
      */
     const emailSended = await sendMailEmailConfirm(newUser);
     if (emailSended?.status === "success") {
-      newUser.emailConfirmed = false;
-      newUser.emailConfirmToken = emailSended.emailConfirmToken;
-      newUser.emailConfirmTokenExpires = emailSended.emailConfirmTokenExpires;
+      newUser.email_confirmed = false;
+      newUser.email_confirm_token = emailSended.emailConfirmToken;
+      newUser.email_confirm_token_expires =
+        emailSended.emailConfirmTokenExpires;
     }
 
     await newUser.save();
@@ -135,12 +136,12 @@ export const loginUserController = async (
     // Create Session
     const session = await createSessionService({
       user,
-      accessToken,
-      accessTokenExpiresIn: await formatDateExpiresInService(
+      access_token: accessToken,
+      access_token_expires_in: await formatDateExpiresInService(
         accessTokenExpiresIn
       ),
-      refreshToken,
-      refreshTokenExpiresIn: await formatDateExpiresInService(
+      refresh_token: refreshToken,
+      refresh_token_expires_in: await formatDateExpiresInService(
         refreshTokenExpiresIn
       ),
     });
@@ -212,7 +213,7 @@ export const refreshAccessTokenController = async (
     // Check if user has a valid session with refreshToken
     const foundSession = await getSessionService({
       active: true,
-      refreshToken: refreshToken,
+      refresh_token: refreshToken,
     });
 
     if (!foundSession) {
@@ -229,7 +230,7 @@ export const refreshAccessTokenController = async (
     // Inativar sessões
     const sessions = await deleteSessionsService(
       user,
-      foundSession.accessToken
+      foundSession.access_token
     );
 
     // Sign new access token
@@ -246,12 +247,12 @@ export const refreshAccessTokenController = async (
 
     const newSession = await createSessionService({
       user,
-      accessToken,
-      accessTokenExpiresIn: await formatDateExpiresInService(
+      access_token: accessToken,
+      access_token_expires_in: await formatDateExpiresInService(
         accessTokenExpiresIn
       ),
-      refreshToken,
-      refreshTokenExpiresIn: foundSession.refreshTokenExpiresIn,
+      refresh_token: refreshToken,
+      refresh_token_expires_in: foundSession.refresh_token_expires_in,
     });
 
     // Add Cookies

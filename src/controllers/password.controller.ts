@@ -32,9 +32,9 @@ export const passwordResetSendController = async (
      */
     const emailSended = await sendMailPasswordResetService(user);
     if (emailSended?.status === "success") {
-      user.passwordReseted = false;
-      user.passwordResetToken = emailSended.passwordResetToken;
-      user.passwordResetTokenExpires = emailSended.passwordResetTokenExpires;
+      user.password_reseted = false;
+      user.password_reset_token = emailSended.passwordResetToken;
+      user.password_reset_token_expires = emailSended.passwordResetTokenExpires;
       await user.save();
 
       // Send response
@@ -75,7 +75,7 @@ export const passwordResetVerifyTokenController = async (
       return sendResponse(req, res, 403, "Usuário não encontrado!", []);
     }
     // link expires
-    if (!user.passwordResetTokenExpires) {
+    if (!user.password_reset_token_expires) {
       return sendResponse(
         req,
         res,
@@ -83,7 +83,7 @@ export const passwordResetVerifyTokenController = async (
         "Link para redefinição de senha inválido!",
         []
       );
-    } else if (new Date() > user.passwordResetTokenExpires) {
+    } else if (new Date() > user.password_reset_token_expires) {
       return sendResponse(
         req,
         res,
@@ -134,7 +134,7 @@ export const passwordResetChangeController = async (
     }
 
     // link expires
-    if (!user.passwordResetTokenExpires) {
+    if (!user.password_reset_token_expires) {
       return sendResponse(
         req,
         res,
@@ -142,7 +142,7 @@ export const passwordResetChangeController = async (
         "Link para redefinição de senha inválido!",
         []
       );
-    } else if (addMinutes(new Date(), 2) > user.passwordResetTokenExpires) {
+    } else if (addMinutes(new Date(), 2) > user.password_reset_token_expires) {
       // adiciona 2 minutos ao tempo de expiração, pois pode ser que no momento de validação, esteja válido
       // mas expire em tela... assim a pessoa tem até 2 minutos para requisitar alteração
 
@@ -163,9 +163,9 @@ export const passwordResetChangeController = async (
     await user.hashPassword();
 
     // Update aux fileds
-    user.passwordReseted = true;
-    user.passwordResetToken = null;
-    user.passwordResetTokenExpires = null;
+    user.password_reseted = true;
+    user.password_reset_token = null;
+    user.password_reset_token_expires = null;
 
     // Save the updated user
     await user.save();

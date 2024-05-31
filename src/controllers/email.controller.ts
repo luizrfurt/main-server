@@ -30,9 +30,9 @@ export const emailConfirmSendController = async (
      */
     const emailSended = await sendMailEmailConfirm(user);
     if (emailSended?.status === "success") {
-      user.emailConfirmed = false;
-      user.emailConfirmToken = emailSended.emailConfirmToken;
-      user.emailConfirmTokenExpires = emailSended.emailConfirmTokenExpires;
+      user.email_confirmed = false;
+      user.email_confirm_token = emailSended.emailConfirmToken;
+      user.email_confirm_token_expires = emailSended.emailConfirmTokenExpires;
       await user.save();
 
       // Send response
@@ -72,7 +72,7 @@ export const emailConfirmVerifyTokenController = async (
     }
 
     // link expires
-    if (!user.emailConfirmTokenExpires) {
+    if (!user.email_confirm_token_expires) {
       return sendResponse(
         req,
         res,
@@ -80,7 +80,7 @@ export const emailConfirmVerifyTokenController = async (
         "Link para confirmação de email inválido!",
         []
       );
-    } else if (new Date() > user.emailConfirmTokenExpires) {
+    } else if (new Date() > user.email_confirm_token_expires) {
       return sendResponse(
         req,
         res,
@@ -91,9 +91,9 @@ export const emailConfirmVerifyTokenController = async (
     }
 
     // Update aux fileds
-    user.emailConfirmed = true;
-    user.emailConfirmToken = null;
-    user.emailConfirmTokenExpires = null;
+    user.email_confirmed = true;
+    user.email_confirm_token = null;
+    user.email_confirm_token_expires = null;
 
     // Save the updated user
     await user.save();

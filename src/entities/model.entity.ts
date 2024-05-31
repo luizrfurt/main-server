@@ -11,10 +11,10 @@ export default abstract class Model extends BaseEntity {
   id: number;
 
   @Column({ type: "timestamp with time zone", nullable: false })
-  createdAt: Date;
+  created_at: Date;
 
   @Column({ type: "timestamp with time zone", nullable: false })
-  updatedAt: Date;
+  updated_at: Date;
 
   @Column({ default: true })
   active: boolean;
@@ -26,12 +26,12 @@ export default abstract class Model extends BaseEntity {
   @BeforeInsert()
   async setCreationTimestamp() {
     const currentDate = this.currentDate();
-    this.createdAt = currentDate;
-    this.updatedAt = currentDate;
+    this.created_at = currentDate;
+    this.updated_at = currentDate;
   }
 
   @BeforeUpdate()
   async setUpdateTimestamp() {
-    this.updatedAt = this.currentDate();
+    this.updated_at = this.currentDate();
   }
 }

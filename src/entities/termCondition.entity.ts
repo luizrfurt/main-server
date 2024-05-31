@@ -1,7 +1,7 @@
 import { Entity, Column } from "typeorm";
 import Model from "./model.entity";
 
-@Entity("termsConditions")
+@Entity("terms_conditions")
 export class TermCondition extends Model {
   @Column()
   content: string;

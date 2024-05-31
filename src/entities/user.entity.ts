@@ -39,38 +39,38 @@ export class User extends Model {
   @Column({
     default: false,
   })
-  emailConfirmed: boolean;
+  email_confirmed: boolean;
 
   @Index("emailConfirmToken_index")
   @Column({
     type: "text",
     nullable: true,
   })
-  emailConfirmToken!: string | null;
+  email_confirm_token!: string | null;
 
   @Column({
     type: "timestamp",
     nullable: true,
   })
-  emailConfirmTokenExpires!: Date | null;
+  email_confirm_token_expires!: Date | null;
 
   @Column({
     default: false,
   })
-  passwordReseted: boolean;
+  password_reseted: boolean;
 
   @Index("passwordResetToken_index")
   @Column({
     type: "text",
     nullable: true,
   })
-  passwordResetToken!: string | null;
+  password_reset_token!: string | null;
 
   @Column({
     type: "timestamp",
     nullable: true,
   })
-  passwordResetTokenExpires!: Date | null;
+  password_reset_token_expires!: Date | null;
 
   @Column({ default: null })
   cpf: string;
@@ -80,7 +80,7 @@ export class User extends Model {
 
   // Referência para o usuário que criou este usuário
   @Column({ nullable: true })
-  createdBy: number;
+  created_by: number;
 
   // Referência para entidade sessions
   @OneToMany(() => Session, (session: Session) => session.user)
@@ -95,7 +95,7 @@ export class User extends Model {
     () => ContextApplication,
     (contextApplication: ContextApplication) => contextApplication.user
   )
-  contextApplications: ContextApplication[];
+  contexts_applications: ContextApplication[];
 
   // Hash senha antes de salvar no banco de dados
   @BeforeInsert()
@@ -106,11 +106,11 @@ export class User extends Model {
   toJSON() {
     return {
       ...this,
-      emailConfirmToken: undefined,
-      emailConfirmTokenExpires: undefined,
-      passwordReseted: undefined,
-      passwordResetToken: undefined,
-      passwordResetTokenExpires: undefined,
+      email_confirm_token: undefined,
+      email_confirm_token_expires: undefined,
+      password_reseted: undefined,
+      password_reset_token: undefined,
+      password_reset_token_expires: undefined,
     };
   }
 }

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ce5f090c-5de9-4487-bd5a-a1f05dc81989",
+		"_postman_id": "5650701a-bfd2-45cc-9ad2-010a0bd312f7",
 		"name": "api Main",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27332845"
+		"_exporter_id": "5766664"
 	},
 	"item": [
 		{
@@ -795,7 +795,7 @@
 			"name": "TermsConditions",
 			"item": [
 				{
-					"name": "Get termsConditions",
+					"name": "Get terms and conditions",
 					"event": [
 						{
 							"listen": "test",

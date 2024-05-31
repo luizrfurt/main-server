@@ -82,7 +82,7 @@ export const createUserController = async (
       password,
       main: false,
       leader,
-      createdBy: user.id,
+      created_by: user.id,
     });
 
     /**
@@ -90,9 +90,9 @@ export const createUserController = async (
      */
     const emailSended = await sendMailEmailConfirm(newUser);
     if (emailSended?.status === "success") {
-      newUser.emailConfirmed = false;
-      newUser.emailConfirmToken = emailSended.emailConfirmToken;
-      newUser.emailConfirmTokenExpires = emailSended.emailConfirmTokenExpires;
+      newUser.email_confirmed = false;
+      newUser.email_confirm_token = emailSended.emailConfirmToken;
+      newUser.email_confirm_token_expires = emailSended.emailConfirmTokenExpires;
     }
 
     await newUser.save();
@@ -138,8 +138,8 @@ export const updateUserController = async (
      */
     const emailSended = await sendMailEmailConfirm(user);
     if (emailSended?.status === "success") {
-      user.emailConfirmToken = emailSended.emailConfirmToken;
-      user.emailConfirmTokenExpires = emailSended.emailConfirmTokenExpires;
+      user.email_confirm_token = emailSended.emailConfirmToken;
+      user.email_confirm_token_expires = emailSended.emailConfirmTokenExpires;
     }
   }
 

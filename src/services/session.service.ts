@@ -33,8 +33,8 @@ export const createSessionService = async (input: Partial<Session>) => {
   try {
     const session = await sessionRepository.save(
       sessionRepository.create({
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: new Date(),
         ...input,
         active: true,
       })
@@ -58,7 +58,7 @@ export const deleteSessionsByUserService = async (user: User) => {
     for (const sess of sessions) {
       await sessionRepository.update(sess.id, {
         active: false,
-        updatedAt: new Date(),
+        updated_at: new Date(),
       });
     }
 
@@ -72,13 +72,13 @@ export const deleteSessionsByAccessTokenService = async (
   accessToken: string
 ) => {
   try {
-    const sessions = await getSessionsService({ accessToken, active: true });
+    const sessions = await getSessionsService({ access_token: accessToken, active: true });
 
     // Atualiza setando active = false com base no id delas
     for (const sess of sessions) {
       await sessionRepository.update(sess.id, {
         active: false,
-        updatedAt: new Date(),
+        updated_at: new Date(),
       });
     }
 
@@ -95,7 +95,7 @@ export const deleteSessionsService = async (
   try {
     const sessions = await getSessionsService({
       user,
-      accessToken,
+      access_token: accessToken,
       active: true,
     });
 
@@ -103,7 +103,7 @@ export const deleteSessionsService = async (
     for (const sess of sessions) {
       await sessionRepository.update(sess.id, {
         active: false,
-        updatedAt: new Date(),
+        updated_at: new Date(),
       });
     }
 
