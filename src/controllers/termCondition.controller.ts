@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from "express";
 import { sendResponse } from "../utils/sendResponse";
 import { getTermsConditionsService } from "../services/termCondition.service";
 
-// Get terms-conditions
+// Get terms and conditions
 export const getTermsConditionsController = async (
   req: Request<{}, {}, {}>,
   res: Response,

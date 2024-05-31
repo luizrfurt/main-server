@@ -3,7 +3,7 @@ import { getTermsConditionsController } from "../controllers/termCondition.contr
 
 const router = express.Router();
 
-// Get terms-conditions
+// Get terms and conditions
 router.get("/", getTermsConditionsController);
 
 export default router;
