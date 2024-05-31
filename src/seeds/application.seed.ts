@@ -2,7 +2,7 @@ import { Seeder, SeederFactoryManager } from "typeorm-extension";
 import { DataSource } from "typeorm";
 import { Application } from "../entities/application.entity";
 
-export default class LocationSeeder implements Seeder {
+export default class ApplicationSeeder implements Seeder {
   async run(
     dataSource: DataSource,
     factoryManager: SeederFactoryManager
