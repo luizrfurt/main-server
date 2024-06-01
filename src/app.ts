@@ -9,6 +9,7 @@ import { AppDataSource } from "./utils/dataSource";
 import { sendResponse } from "./utils/sendResponse";
 import AppError from "./utils/appError";
 import router from "./router";
+import { setupSwaggerDocs } from "./swagger";
 
 AppDataSource.initialize()
   .then(async () => {
@@ -43,6 +44,9 @@ AppDataSource.initialize()
 
     // ROUTER
     app.use(router);
+
+    // Setup Swagger Docs
+    setupSwaggerDocs(app);
 
     // Mailer
     try {
