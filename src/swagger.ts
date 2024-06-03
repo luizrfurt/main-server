@@ -1,6 +1,10 @@
+require("dotenv").config();
+import config from "config";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import { Application } from "express";
+
+const port = config.get<number>("port");
 
 const options = {
   definition: {
@@ -13,7 +17,7 @@ const options = {
 
     servers: [
       {
-        url: "http://localhost:3000",
+        url: `http://localhost:${port}`,
       },
     ],
   },
@@ -23,5 +27,5 @@ const options = {
 const swaggerSpec = swaggerJSDoc(options);
 
 export const setupSwaggerDocs = (app: Application) => {
-  app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  app.use("/api/main/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 };
