@@ -28,6 +28,8 @@ export const getContextByIdService = async (contextId: number) => {
         ...context,
         applications: filteredApplications,
       });
+    } else {
+      return null;
     }
 
     return contextsWithApplications;
