@@ -45,7 +45,7 @@ export const enableContextApplicationService = async (
 
     const contextApplication = await getContextByIdService(contextId);
 
-    return contextApplication;
+    return contextApplication ? contextApplication : [];
   } catch (err: any) {
     throw new AppError(
       500,
@@ -66,7 +66,7 @@ export const disableContextApplicationService = async (
 
     const contextApplication = await getContextByIdService(contextId);
 
-    return contextApplication;
+    return contextApplication ? contextApplication : [];
   } catch (err: any) {
     throw new AppError(
       500,

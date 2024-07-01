@@ -23,7 +23,7 @@ export class Application extends Model {
     () => ContextApplication,
     (contextApplication: ContextApplication) => contextApplication.application
   )
-  contexts_applications: ContextApplication[];
+  context_applications: ContextApplication[];
 
   toJSON() {
     return { ...this };

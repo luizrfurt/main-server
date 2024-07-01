@@ -95,7 +95,7 @@ export class User extends Model {
     () => ContextApplication,
     (contextApplication: ContextApplication) => contextApplication.user
   )
-  contexts_applications: ContextApplication[];
+  context_applications: ContextApplication[];
 
   // Hash senha antes de salvar no banco de dados
   @BeforeInsert()

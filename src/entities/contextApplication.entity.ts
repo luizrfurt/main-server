@@ -4,13 +4,13 @@ import { Context } from "./context.entity";
 import { Application } from "./application.entity";
 import { User } from "./user.entity";
 
-@Entity("contexts_applications")
+@Entity("context_applications")
 export class ContextApplication extends Model {
   @Column({ default: false })
   contracted: boolean;
 
   // Referência para entidade contexts
-  @ManyToOne(() => Context, (context: Context) => context.contexts_applications, {
+  @ManyToOne(() => Context, (context: Context) => context.context_applications, {
     eager: true,
   })
   context: Context;
@@ -18,13 +18,13 @@ export class ContextApplication extends Model {
   // Referência para entidade applications
   @ManyToOne(
     () => Application,
-    (application: Application) => application.contexts_applications,
+    (application: Application) => application.context_applications,
     { eager: true }
   )
   application: Application;
 
   // Referência para entidade users
-  @ManyToOne(() => User, (user: User) => user.contexts_applications, {
+  @ManyToOne(() => User, (user: User) => user.context_applications, {
     eager: true,
   })
   user: User;
